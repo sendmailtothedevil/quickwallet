@@ -1,1 +1,1 @@
-web: gunicorn quickwallet.wsgi --log-file=-
+web: gunicorn quickwallet.wsgi
