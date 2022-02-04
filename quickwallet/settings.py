@@ -29,7 +29,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = str(os.environ.get('DEBUG')) == '1' #1 == True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['quickwallet.herokuapp.com']
 
 
 # Application definition
