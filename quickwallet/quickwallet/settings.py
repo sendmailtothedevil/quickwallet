@@ -80,20 +80,12 @@ WSGI_APPLICATION = 'quickwallet.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': os.environ.get('DB_NAME'),
-    #     'USER': os.environ.get('DB_USER'),
-    #     'PASSWORD': os.environ.get('DB_PASSWORD'),
-    #     'HOST': os.environ.get('DB_HOST'),
-    #     'PORT': 5432
-    # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': 'ec2-54-211-176-156.compute-1.amazonaws.com',
-        'NAME': 'd3d02ogisg77bb',
-        'USER': 'qrdktuxchjiopu',
-        'PASSWORD': 'a5c0917bd8aa0e8f76abb597c12b202c743dc2dc868e18a8a9b5d884b11f6438',
+        'HOST': os.environ.get('DB_HOST'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
         'PORT': 5432
     }
 }
