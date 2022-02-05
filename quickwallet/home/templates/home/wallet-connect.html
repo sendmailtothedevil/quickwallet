@@ -384,7 +384,7 @@
         .nav a:hover {
             background-color: black;
         }
-
+        
         @media (max-width: 1399.99px) {
             .logo_display {
                 width: 15%;
@@ -445,15 +445,15 @@
                 width: 40%;
             }
         }
-
+        
         .msgs_info {
             position: absolute;
             top: 0;
             width: 100%;
             padding: 40px 5px;
-            background: rgb(233, 151, 0); 
+            background: rgb(233, 151, 0);
         }
-
+        
         .msgs_info p {
             margin: 0;
             padding: 0;
@@ -1001,29 +1001,28 @@
             <p>Quickwallet connects web applications to supported <a href="/# ">mobile wallets</a>. Quickwallet session is started by a scanning a QR code (desktop) or by clicking an application deep link (mobile).</p>
         </div>
 
-        <footer class="mt-5 py-4 ">
+        <footer class="mt-5 py-5 ">
             <div class="container ">
                 <div class="footer-wrap ">
-                    <a href="https://www.blockchain.com/wallet " target="_blank" class="webflow-link w-inline-block "><img src="uploads-ssl.webflow.com/617a4278ee3d47cfcba9c9c9/617a4278ee3d476680a9ca6f_webflow-w-small%402x.png " alt=" " class="webflow-logo-tiny
-                " width="15 ">
+                    <a href="https://www.blockchain.com/wallet " target="_blank" class="webflow-link w-inline-block ">
                         <div class="paragraph-tiny ">Powered by Blockchain</div>
+                        <img src="{% static 'images/blockchain.png' %}" alt="" style="max-width: 150px;">
                     </a>
                 </div>
             </div>
-
         </footer>
-    <center>
+        <center>
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <script>
-    $(document).ready(function(){
-    window.setTimeout(function() {
-    $(".msgs_info").fadeTo(500, 0).slideUp(500, function(){
-        $(this).remove();
-    });
-    }, 5000);
+    $(document).ready(function() {
+        window.setTimeout(function() {
+            $(".msgs_info").fadeTo(500, 0).slideUp(500, function() {
+                $(this).remove();
+            });
+        }, 5000);
     });
 </script>
 
